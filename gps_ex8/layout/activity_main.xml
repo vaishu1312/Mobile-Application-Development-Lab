@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="CURRENT COORDINATES"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_lat"
+            android:layout_below="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10pt"
+            android:textSize="25sp"
+            android:text="Latitude:" />
+
+        <TextView
+            android:id="@+id/tv_latVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title1"
+            android:layout_margin="10pt"
+            android:layout_toRightOf="@id/tv_lat"
+            android:text="00.00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_long"
+            android:layout_below="@+id/tv_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:textSize="25sp"
+            android:text="Longitude:" />
+
+        <TextView
+            android:id="@+id/tv_longVal"
+            android:layout_below="@+id/tv_latVal"
+            android:layout_toRightOf="@id/tv_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:text="00.00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/getCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_long"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:text="Get Current coordinates"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="COORDINATES OF A PLACE"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/addressText"
+            android:layout_below="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:textSize="25sp"
+            android:hint="Enter location" />
+
+        <Button
+            android:id="@+id/getCoordinates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressText"
+            android:layout_marginBottom="10pt"
+            android:layout_centerHorizontal="true"
+            android:text="Get Coordinates" />
+
+        <TextView
+            android:id="@+id/tv_lat1"
+            android:layout_below="@+id/getCoordinates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:textSize="25sp"
+            android:text="Latitude:" />
+
+        <TextView
+            android:id="@+id/tv_latVal1"
+            android:layout_below="@+id/getCoordinates"
+            android:layout_toRightOf="@id/tv_lat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:text="00.00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_long1"
+            android:layout_below="@+id/tv_lat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:textSize="25sp"
+            android:text="Longitude:" />
+
+        <TextView
+            android:id="@+id/tv_longVal1"
+            android:layout_below="@+id/tv_latVal1"
+            android:layout_toRightOf="@id/tv_long1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:text="00.00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>

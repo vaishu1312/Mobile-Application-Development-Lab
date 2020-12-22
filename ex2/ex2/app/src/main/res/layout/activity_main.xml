@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HOSPITAL REGISTRATION FORM"
+            android:textColor="#214d90"
+            android:textSize="36sp"
+            android:textStyle="normal"
+            android:gravity="center"
+            android:typeface="serif"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="125dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/tv1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Name"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_below="@+id/tv1"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Enter your name"
+            android:inputType="text"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/dob_tv"
+            android:layout_width="125dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/name_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="DOB"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <DatePicker
+            android:id="@+id/date_dp"
+            android:layout_width="305dp"
+            android:layout_height="400dp"
+            android:layout_below="@+id/name_et"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/gender_tv"
+            android:layout_width="125dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/dob_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="367dp"
+            android:text="Gender"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <RadioGroup
+            android:id="@+id/gd_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/date_dp"
+            android:layout_toRightOf="@+id/gender_tv"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                >
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transgender">
+            </RadioButton>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/ms_tv"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gender_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="62dp"
+            android:text="Marital Status"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <Spinner
+            android:id="@+id/ms_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gd_rg"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="147dp"
+            android:layout_toRightOf="@+id/ms_tv"
+            >
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/contact_tv"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ms_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Contact Number"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <EditText
+            android:id="@+id/contact_et"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_below="@+id/ms_sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="42dp"
+            android:layout_marginRight="13dp"
+            android:hint="Enter phone number"
+            android:inputType="phone"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/addict_tv"
+            android:layout_width="118dp"
+            android:layout_height="84dp"
+            android:layout_below="@+id/contact_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Addiction"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <CheckBox
+            android:id="@+id/smoke_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoking"
+            android:layout_below="@+id/contact_et"
+            android:layout_toRightOf="@+id/addict_tv"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            />
+        <CheckBox
+            android:id="@+id/alcohol_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcohol"
+            android:layout_below="@+id/smoke_cb"
+            android:layout_toRightOf="@+id/addict_tv"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:id="@+id/submit_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alcohol_cb"
+            android:layout_centerInParent="false"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="10dp"
+            android:text="SUBMIT"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif" />
+
+        <Button
+            android:id="@+id/reset_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alcohol_cb"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:text="RESET"
+            android:textColor="#005ae4"
+            android:textSize="25sp"
+            android:typeface="serif"
+            android:onClick="resetFields"/>
+
+    </RelativeLayout>
+</ScrollView>

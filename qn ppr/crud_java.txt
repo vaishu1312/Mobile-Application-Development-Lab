@@ -1,0 +1,157 @@
+package com.example.crud;
+import android.content.ContentValues;
+import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    SQLiteDatabase db;
+    TextView textView;
+    EditText edt_empname,edt_gender ,edt_empcode ,edt_dept, edt_salary;
+    Button btn_insert, btn_delete, btn_update, btn_retrieve, btn_create ;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        textView = (TextView) findViewById(R.id.textView);
+        edt_empname = (EditText) findViewById(R.id.edt_empname);
+        edt_gender = (EditText) findViewById(R.id.edt_gender);
+        edt_empcode = (EditText) findViewById(R.id.edt_empcode);
+        edt_dept = (EditText) findViewById(R.id.edt_dept);
+        edt_salary = (EditText) findViewById(R.id.edt_salary);
+        btn_insert = (Button) findViewById(R.id.btn_insert);
+        btn_delete= (Button) findViewById(R.id.btn_delete);
+        btn_update= (Button) findViewById(R.id.btn_update);
+        btn_retrieve= (Button) findViewById(R.id. btn_retrieve);
+        btn_create=(Button) findViewById(R.id. btn_create);
+        textView.setMovementMethod(new ScrollingMovementMethod());
+        btn_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db=openOrCreateDatabase("EmployeeDB", Context.MODE_PRIVATE, null);
+                db.execSQL("DROP TABLE IF EXISTS Employee");
+                db.execSQL("CREATE TABLE IF NOT EXISTS Employee(empname VARCHAR, gender VARCHAR, empcode INTEGER PRIMARY KEY , dept VARCHAR, Salary FLOAT);");
+                Toast toast = Toast.makeText(getApplicationContext(),"Table created!",Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+        btn_insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edt_empname.getText().toString().trim().length()==0||
+                        edt_gender.getText().toString().trim().length()==0||
+                        edt_empcode.getText().toString().trim().length()==0||
+                        edt_dept.getText().toString().trim().length()==0||
+                        edt_salary.getText().toString().trim().length()==0)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please enter all the values!",Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("empname", String.valueOf(edt_empname.getText()));
+                contentValues.put("gender", String.valueOf(edt_gender.getText()));
+                contentValues.put("dept", String.valueOf(edt_dept.getText()));
+                contentValues.put("salary", String.valueOf(edt_salary.getText()));
+                contentValues.put("empcode", String.valueOf(edt_empcode.getText()));
+                long c = db.insert("Employee",null, contentValues);
+                if(c!=-1)
+                {   Toast toast = Toast.makeText(getApplicationContext(),"Record Added!",Toast.LENGTH_SHORT);
+                    toast.show();}
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Error occured!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
+            }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edt_empcode.getText().toString().trim().length()==0)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please Enter Employee Code!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                int c= db.delete("Employee", "empcode =?", new String[]{String.valueOf(edt_empcode.getText())});
+                if(c!=0){
+                    Toast toast = Toast.makeText(getApplicationContext(),"Record Deleted!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please Enter Valid Employee Code!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        });
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edt_empcode.getText().toString().trim().length()==0)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please Enter Employee Code!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("empname", String.valueOf(edt_empname.getText()));
+                contentValues.put("gender", String.valueOf(edt_gender.getText()));
+                contentValues.put("dept", String.valueOf(edt_dept.getText()));
+                contentValues.put("salary", String.valueOf(edt_salary.getText()));
+                int c=db.update("Employee", contentValues, "empcode =?", new String[]{String.valueOf(edt_empcode.getText())});
+                if(c!=0) {
+
+                    Toast toast = Toast.makeText(getApplicationContext(),"Database Updated!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please Enter Valid Employee Code!",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        });
+        btn_retrieve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText("");
+                Cursor c=db.rawQuery("SELECT * FROM Employee", null);
+                if(c.getCount()==0)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"No records found!",Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
+                StringBuffer buffer=new StringBuffer();
+                buffer.append("-----------------------------------------------------------\n");
+                buffer.append("\t EMPLOYEE DATABASE \n");
+                buffer.append("-----------------------------------------------------------\n\n");
+                while(c.moveToNext())
+                {
+                    buffer.append("Employee Name: "+c.getString(0)+"\n");
+                    buffer.append("Gender: "+c.getString(1)+"\n");
+                    buffer.append("Employee Code: "+Integer.toString(c.getInt(2))+"\n");
+                    buffer.append("Department: "+c.getString(3)+"\n");
+                    buffer.append("Salary: "+Float.toString(c.getFloat(4))+"\n\n");
+
+                    buffer.append("-----------------------------------------------------------\n\n");
+                }
+
+                textView.setText(buffer.toString());
+            }
+        });;
+
+    }
+}

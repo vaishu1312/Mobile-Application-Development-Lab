@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ex5</string>
+    <array name="dept">
+        <item>CSE</item>
+        <item>HR</item>
+        <item>MGMT</item>
+        <item>MKT</item>
+    </array>
+</resources>

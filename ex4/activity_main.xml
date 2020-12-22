@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRAPHICAL PRIMITIVES"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:padding="5dp"/>
+
+        <Button
+            android:id="@+id/bt_paint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Draw Shapes"
+            android:layout_gravity="center"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/bt_forward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Animate - Forward"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/bt_backward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Animate - Backward"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/bt_animate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Transform - Rotate and Zoom"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/bt_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Animated Car"
+            android:padding="10dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="10dp"
+        >
+
+    <ImageView
+        android:id="@+id/iv_animate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/car_img" />
+
+</LinearLayout>
+</LinearLayout>

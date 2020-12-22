@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ex2</string>
+    <string-array name="marital">
+        <item>Single</item>
+        <item>Married</item>
+    </string-array>
+</resources>

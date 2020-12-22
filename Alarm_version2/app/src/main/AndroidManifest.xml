@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.alarmtrial">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"  android:launchMode="standard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".alarmReceiver" />
+        <!--Intent filters indicate the specific broadcast intents that the receiver is required to listen for.
+        These filters can be set either in manifest or in code using Intent.setAction
+        In manifest set ..this is static registration
+        If you want your App to listen the broadcast even if the App is closed Go for Static Broadcast Reciever.
+
+        <receiver android:name="MyReceiver" >
+            <intent-filter>
+                <action android:name="com.example.Broadcast" > This is the same as the one in i.setAction("") while sendBroadcast()
+                </action>
+            </intent-filter>
+        </receiver>
+        -->
+    </application>
+
+</manifest>

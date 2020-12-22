@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ALARM CLOCK"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select the time to set or cancel an alarm"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:textStyle="italic"/>
+
+    <EditText
+        android:id="@+id/et_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Click to select time"
+        android:layout_margin="5dp"/>
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SET ALARM"
+        android:id="@+id/bt_set"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP ALARM"
+        android:id="@+id/bt_stop"/>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:text="Employee Database"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+    <Button
+        android:id="@+id/bt_cre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Create"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/bt_ins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Insert"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/bt_upd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Update"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/bt_del"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Delete"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/bt_ret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Retrieve by employee code"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
+
+    <Button
+            android:id="@+id/bt_ret_dt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Retrieve by department"
+            android:layout_margin="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</LinearLayout>
